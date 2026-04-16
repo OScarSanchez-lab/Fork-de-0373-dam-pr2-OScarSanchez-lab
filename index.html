@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Dashboard</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-inner">
+            <h1>Travel Dashboard</h1>
+            <p class="header-sub">Consulta el temps, la moneda i més sobre la teva destinació</p>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="selector-container">
+            <label for="city-select">Tria la teva destinació:</label>
+            <select id="city-select">
+                <option value="" disabled selected>Selecciona una ciutat...</option>
+            </select>
+        </section>
+
+        <div id="loading" style="display:none;">
+            <div class="spinner"></div>
+            <p>Carregant dades...</p>
+        </div>
+
+        <div id="error-msg" style="display:none;" class="error-banner">
+            <span id="error-text"></span>
+        </div>
+
+        <div class="grid-container" id="dashboard" style="display: none;">
+
+            <section id="summary-card" class="card card--main">
+                <h2>Resum de Destinació</h2>
+                <p id="ciudad"><span class="label">Ciutat:</span> <span id="ciudad-val"></span></p>
+                <p id="pais"><span class="label">País:</span> <span id="pais-val"></span></p>
+                <p><span class="label">Temperatura:</span> <span id="temp-summary">—</span></p>
+                <p><span class="label">Moneda local:</span> <span id="coin-val"></span></p>
+            </section>
+
+            <section id="weather-widget" class="card">
+                <h2>Estat del Temps</h2>
+                <div id="weather-data">
+                    <p><span class="label">Temperatura:</span> <span id="temp-weather">—</span></p>
+                    <p><span class="label">Precipitació:</span> <span id="prec-weather">—</span></p>
+                    <p id="rain-label" class="rain-label">—</p>
+                </div>
+            </section>
+
+            <section id="currency-widget" class="card">
+                <h2>Conversor de Moneda</h2>
+                <div class="input-group">
+                    <label for="eur-amount">Quantitat en EUR (€):</label>
+                    <input type="number" id="eur-amount" placeholder="Ex: 100" value="100" min="0">
+                    <button id="convert-btn">Convertir</button>
+                </div>
+                <div id="currency-result" class="currency-result" style="display:none;">
+                    <p><span id="eur-display"></span> → <strong id="converted-display"></strong></p>
+                    <p class="currency-note" id="rate-note"></p>
+                </div>
+            </section>
+
+            <section id="travel-recommendation" class="card">
+                <h2>Recomanació de Viatge</h2>
+                <p id="funfact" class="recommendation-text">—</p>
+            </section>
+
+        </div>
+
+    </main>
+
+    <footer>
+    <p>PROYECTO DAM Travel Dashboard · Dades: <a href="https://open-meteo.com/en/docs" target="_blank">Open-Meteo</a> & <a href="https://www.frankfurter.app/" target="_blank">Frankfurter</a></p>
+    </footer>
+</body>
+</html>
