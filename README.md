@@ -13,7 +13,7 @@ Este dashboard fue desarrollado para el módulo de **Lenguajes de Marcas** (Web)
 
 ## 💻 Dashboard Preview
 <p align="center">
-  <img src="dashboard-preview.png" width="600" alt="Dashboard Preview">
+  <img src="Captura_de_pantalla.png" width="600" alt="Dashboard Preview">
 </p>
 
 ## 🔗 Link de Vercel
